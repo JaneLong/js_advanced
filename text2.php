@@ -7,3 +7,5 @@
  */
 $p="345";
 echo $p;
+
+var_dump($p);
