@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tune Object</title>
+    <script type="text/javascript">
+    // js的所有函数都是对象，创建函数，也就是创建了自定义对象；
+    // 该函数的内部是两个属性和两个方法。
+    // 本示例中，实现这些方法的代码是对象声明的一部分；
+
+    var Tune=function(title){
+        // 使用this为对象的title属性赋值，为公开属性；
+        this.title=title;
+        
+        // var关键字创建的属性是对象的私有属性；
+        var performedBy=new Array();
+
+        // this为方法赋值
+        this.addPerformer=function(performer){
+            var i=performedBy.length;
+            performedBy[i]=performer;
+        }
+
+        this.listPerformers=function(){
+            var singers="";
+            // 遍历对象的属性
+            for(var i=0;i<performedBy.length;i++){
+                singers+=performedBy[i]+"";
+
+            }
+            return singers;
+        }
+    }
+    window.onload=function(){
+        var song=new Tune("Hello");
+        song.addPerformer("Me");
+        song.addPerformer("You");
+        song.addPerformer("Us");
+        document.write("Song is"+song.title);
+        document.write("Performed by"+song.listPerformers());
+    }
+// 也可以在对象外创建函数，并将函数名称赋值于对象成员
+/* function externalAddPerformer(preformer){
+    ....
+}
+this.addPerformer=externalAddPerformer; */
+
+
+    
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

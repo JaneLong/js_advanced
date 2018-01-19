@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+    // 创建自定义对象另一种方法是创建对象实例；
+    // 使用this为对象的title属性赋值；
+    function Tune(title){
+        this.title=title;
+    }
+    function printTitle(){
+        document.write(this.title+"<br/>");
+
+    }
+    window.onload=function(){
+    //  通过prototype属性将用来输出歌曲标题的全局函数添加到Tune原型中；
+    //  通过实例化结合原型链的原则可以访问到标题的方法;
+        Tune.prototype.print=printTitle;
+        var oneTune=new Tune("One Title");
+        oneTune.print();
+        // console.log(oneTune.__proto__);
+
+        var anotherTune=new Tune("Another Title");
+        anotherTune.print();
+    }
+
+
+
+
+    </script>
+</head>
+<body>
+    <p>some comtent</p>
+</body>
+</html>
