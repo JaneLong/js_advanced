@@ -9,3 +9,6 @@ $p="345";
 echo $p;
 
 var_dump($p);
+
+//ntd
+//today i want to know how to use phpstrom
